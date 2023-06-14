@@ -9,22 +9,26 @@ public class DisplayData : MonoBehaviour
 
     private SandwichData currentSandwich;
 
-    public SandwichData RandomizeCurrentSandwich()
+    public void RandomizeCurrentSandwich()
     {
         if(sandwiches.Count == 0)
         {
             Debug.LogWarning("<color=yellow>[Reminder]</color> The sandwichList is currently empty and no sandwichObject was returned."); //Don't forget the list!
-            return null;
+            return;
         }
         int randomIndex = Random.Range(0, sandwiches.Count);
         currentSandwich = sandwiches[randomIndex];
+    }
+
+    public SandwichData GetCurrentSandwich()
+    {
         return currentSandwich;
     }
 
-    /* This is a simple script containing only one function that will be called by the DisplayExecuter. 
-     * The function will randomize an Index - from 0 to n. Where n represents the maximum number of elements in the list "sandwiches".
+    /* The first function will randomize an Index - from 0 to n. Where n represents the maximum number of elements in the list "sandwiches".
      * Then, it will assign the sandwich from the Index to the currentSandwich variable.
-     * The currentSandiwch will be returned to the DisplayExecuter with all its data (name, icon and ingredients). */
+     * The currentSandiwch will be returned to the DisplayExecuter and IngredientChecker with all its data (name, icon and ingredients)
+     * through the second function. */
 
     /* Randomizing each time the function is called - instead of every time the game starts - is a better option here, since there isn't a
      * limited number of times the player can finish all the elements of the list (or all created sandwiches). Another option would be to randomize

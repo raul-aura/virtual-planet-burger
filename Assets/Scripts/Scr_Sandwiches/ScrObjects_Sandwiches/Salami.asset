@@ -16,5 +16,5 @@ MonoBehaviour:
   sandwichIcon: {fileID: 0}
   sandwichIngredient:
   - {fileID: 11400000, guid: 517cf499d1fa6224e8b2fc275a2a6ff4, type: 2}
-  - {fileID: 11400000, guid: 517cf499d1fa6224e8b2fc275a2a6ff4, type: 2}
+  - {fileID: 11400000, guid: 04667f5413576e04a860b0e6e426d6fb, type: 2}
   - {fileID: 11400000, guid: 38cf3369bb9875248a4c9413f184cbcb, type: 2}

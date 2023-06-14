@@ -7,21 +7,16 @@ using TMPro;
 public class DisplayExecuter : MonoBehaviour
 {
     [Header("Reference to DisplayData Script")]
-    public DisplayData displayData; //Reference to the DisplayData script.
+    public DisplayData displayData; 
 
     [Header("References to GUI Elements")]
     public TextMeshProUGUI sandwichName_Text;
     public Image sandwichIcon_Image;
     public TextMeshProUGUI[] sandwichIngredients_Texts;
 
-    void Start()
-    {
-        DisplaySandwich();
-    }
-
     public void DisplaySandwich()
     {
-        SandwichData sandwich = displayData.RandomizeCurrentSandwich();
+        SandwichData sandwich = displayData.GetCurrentSandwich();
         if(sandwich != null)
         {
             sandwichName_Text.text = sandwich.sandwichName;
