@@ -31,12 +31,13 @@ public class PlayerTimer : MonoBehaviour
             currentTime--;
         }
         UpdateTimerText();
-        Debug.Log("The timer is over!");
-        gameLogicManager.InitializeEvents();
+        gameLogicManager.ShowRestart();
     }
 
     private void UpdateTimerText()
     {
         timer_Text.text = currentTime.ToString("F0");
     }
+
+    /* This script controls the second timer of the game, the one that controls how many seconds the player has to make as many sandwiches as possible. */
 }

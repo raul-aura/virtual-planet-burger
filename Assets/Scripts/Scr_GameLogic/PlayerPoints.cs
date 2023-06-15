@@ -20,6 +20,7 @@ public class PlayerPoints : MonoBehaviour
     private int playerPoints = 0;
     private int winStreak = 0;
     private float pointMultiplier = 1.0f; //This multiplier will be used if the player is on a win streak.
+    private int highestPlayerPoints;
 
     public void AddPoints()
     {
@@ -66,6 +67,10 @@ public class PlayerPoints : MonoBehaviour
 
     public void ResetPoints()
     {
+        if(playerPoints > highestPlayerPoints)
+        {
+            highestPlayerPoints = playerPoints;
+        }
         playerPoints = 0;
         winStreak = 0;
         pointMultiplier = 1.0f;
