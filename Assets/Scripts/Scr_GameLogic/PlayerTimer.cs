@@ -3,41 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PlayerTimer : MonoBehaviour
+public class PlayerTimer : TimelineTimer
 {
     [Header("Reference to the GameLogicManager.")]
     public GameLogicManager gameLogicManager;
 
-    [Header("Reference to the GUI Element.")]
-    public TextMeshProUGUI timer_Text;
-
-    [Header("Time limit for making sandwiches.")]
-    public float playerTime = 120f;
-
-    private float currentTime;
-
-    public void InitializeTimer()
+    public override IEnumerator Countdown()
     {
-        currentTime = playerTime;
-        StartCoroutine(Countdown());
-    }
-
-    private IEnumerator Countdown()
-    {
-        while (currentTime > 0)
-        {
-            UpdateTimerText();
-            yield return new WaitForSeconds(1.0f);
-            currentTime--;
-        }
-        UpdateTimerText();
+        yield return base.Countdown();
         gameLogicManager.ShowRestart();
     }
 
-    private void UpdateTimerText()
-    {
-        timer_Text.text = currentTime.ToString("F0");
-    }
-
-    /* This script controls the second timer of the game, the one that controls how many seconds the player has to make as many sandwiches as possible. */
+    /* This script handles the game's second timer, determining the available time for the player to make sandwiches. 
+     * It also displays the Restart panel when the timer ends, utilizing the countdown from the parent class. */
 }

@@ -17,6 +17,9 @@ public class GameLogicManager : MonoBehaviour
     public PlayerTimer playerTimer;
 
     [Header("Reference to PanelVisibility Script from the Restart Panel.")]
+    public PanelVisibility startBackgroundCanvasGroup;
+
+    [Header("Reference to PanelVisibility Script from the Restart Panel.")]
     public PanelVisibility restartCanvasGroup;
 
     public void InitializeEvents()
@@ -34,6 +37,8 @@ public class GameLogicManager : MonoBehaviour
 
     public void ShowRestart()
     {
+        playerPoints.UpdateFinalPoints();
+        startBackgroundCanvasGroup.ShowCanvasGroup();
         restartCanvasGroup.ShowCanvasGroup();
     }
 

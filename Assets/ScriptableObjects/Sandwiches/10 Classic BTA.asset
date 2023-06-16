@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 871ddd88551fcb24fa3a5cb3a07efdb5, type: 3}
+  m_Name: 10 Classic BTA
+  m_EditorClassIdentifier: 
+  sandwichName: Classic BTA
+  sandwichIcon: {fileID: 21300000, guid: 42cc7ad821adb4e4fb20c485b0fe83f9, type: 3}
+  sandwichIngredient:
+  - {fileID: 11400000, guid: 9000632da50a4c544b51e4213c38a99b, type: 2}
+  - {fileID: 11400000, guid: d81efbb249b3f854a9ef2828839b7b9d, type: 2}
+  - {fileID: 11400000, guid: b9bbda3a59fa6f841907abc31770eacc, type: 2}

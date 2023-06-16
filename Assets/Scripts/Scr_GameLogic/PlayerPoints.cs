@@ -65,12 +65,17 @@ public class PlayerPoints : MonoBehaviour
         displayPoints.DisplayCurrentMultiplier(pointMultiplier);
     }
 
-    public void ResetPoints()
+    public void UpdateFinalPoints()
     {
-        if(playerPoints > highestPlayerPoints)
+        if (playerPoints > highestPlayerPoints)
         {
             highestPlayerPoints = playerPoints;
         }
+        displayPoints.DisplayFinalPoints(playerPoints, highestPlayerPoints);
+    }
+
+    public void ResetPoints()
+    {
         playerPoints = 0;
         winStreak = 0;
         pointMultiplier = 1.0f;
