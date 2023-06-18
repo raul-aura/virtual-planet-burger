@@ -10,6 +10,9 @@ public class PlayerPoints : MonoBehaviour
     [Header("Reference to PlayerPoints Script")]
     public DisplayPoints displayPoints;
 
+    [Header("Reference to BackgroundChanger Script")]
+    public BackgroundChanger backgroundScript;
+
     [Header("Define the limits of the points.")]
     public int minPoints = 0;
     public int maxPoints = 10000;
@@ -51,10 +54,12 @@ public class PlayerPoints : MonoBehaviour
         if(winStreak >= 1 && winStreak % 5 == 0) //Every 5 wins, the point multiplier will increase.
         {
             pointMultiplier += 1.84f;
+            backgroundScript.InitializeFade();
         }
         else if (winStreak == 0)
         {
             pointMultiplier = 1.0f;
+            backgroundScript.ResetBackground();
         }
     }
 
@@ -79,5 +84,6 @@ public class PlayerPoints : MonoBehaviour
         playerPoints = 0;
         winStreak = 0;
         pointMultiplier = 1.0f;
+        backgroundScript.ResetBackground();
     }
 }
